@@ -13,6 +13,8 @@ public class E1215 {
     public static void main(String[] args) {
         int opcion;
         Map<Producto, Integer> stock = new HashMap<>();
+        Integer i;
+
 
         do {
             opcion = opcionMenu();
