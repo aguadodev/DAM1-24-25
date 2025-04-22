@@ -22,6 +22,13 @@ public class Cliente implements Comparable<Cliente> {
         this.fechaNacimiento = LocalDate.parse(fechaNacimiento, formatoFechas);
     }
 
+    
+
+    public Cliente(String nombre) {
+        this.nombre = nombre;
+    }
+
+
     private int edad() {
         return (int) fechaNacimiento.until(LocalDate.now(), ChronoUnit.YEARS);
     }
