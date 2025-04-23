@@ -29,7 +29,7 @@ public class Cliente implements Comparable<Cliente> {
     }
 
 
-    private int edad() {
+    public int getEdad() {
         return (int) fechaNacimiento.until(LocalDate.now(), ChronoUnit.YEARS);
     }
 
@@ -60,7 +60,7 @@ public class Cliente implements Comparable<Cliente> {
 
     @Override
     public String toString() {
-        return "DNI: " + dni + " Nombre: " + nombre + " Edad: " + edad() + " \n";
+        return "DNI: " + dni + " Nombre: " + nombre + " Edad: " + getEdad() + " \n";
     }
 
     @Override
@@ -101,9 +101,9 @@ public class Cliente implements Comparable<Cliente> {
     public static List<Cliente> clientesDeEjemplo() {
         List<Cliente> clientes = new ArrayList<Cliente>();
         clientes.add(new Cliente("34534534Z", "Pepe", "20/12/2000"));
-        clientes.add(new Cliente("34534534Z", "Pepe", "20/12/2000"));
-        clientes.add(new Cliente("34555534Z", "María", "20/12/2000"));
-        clientes.add(new Cliente("22222234Z", "Lola", "20/12/2000"));
+        clientes.add(new Cliente("34534534Z", "Pepe", "20/12/2005"));
+        clientes.add(new Cliente("34555534Z", "María", "20/12/2009"));
+        clientes.add(new Cliente("22222234Z", "Lola", "20/12/2003"));
         return clientes;
     }    
 

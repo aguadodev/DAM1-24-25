@@ -55,6 +55,11 @@ public class AppInterfacesFuncionales {
         Function<Double, Double> cuadrado = x -> x * x;
         Double resultado3 = cuadrado.apply(5.0); // 25.0
 
+        Function<Cliente, Integer> obtenerEdad = c -> c.getEdad();
+
+        obtenerEdad.apply(new Cliente("1", "Pepe", "01/01/2008"));
+
+
         /*
          * Interfaz CONSUMER
          */

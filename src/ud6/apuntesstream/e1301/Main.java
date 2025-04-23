@@ -1,6 +1,8 @@
 package ud6.apuntesstream.e1301;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 import ud6.apuntescolecciones.Cliente;
@@ -46,7 +48,10 @@ public class Main {
         List<String> saludosClientes = saludar((c) -> "Que pasa, " + c.getNombre() + "?" , tCliente);
         System.out.println(saludosClientes);
 
-
+        // Llamada método E1302
+        System.out.println("\nE1303 - Cliente de más edad");
+        System.out.println("===========================\n");        
+        System.out.println(max(tCliente, (a, b) -> a.getEdad() - b.getEdad()));
 
     }
 
@@ -60,6 +65,16 @@ public class Main {
         }
 
         return saludos;
+    }
+
+
+    static <T> T max(T[] t, Comparator<T> c) {
+        if (t == null || t.length == 0 || c == null)
+            return null;
+
+        Arrays.sort(t, c.reversed());
+
+        return t[0];
     }
 
 
