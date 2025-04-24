@@ -19,7 +19,7 @@ public class Feitizo {
     // Constructores
     public Feitizo(String nome, String[] ingredientes, Integer dificultade) {
         this.nome = nome;
-        //this.ingredientes = Arrays.asList(ingredientes);
+        // this.ingredientes = Arrays.asList(ingredientes);
         this.ingredientes = List.of(ingredientes);
         this.dificultade = dificultade;
     }
@@ -51,11 +51,23 @@ public class Feitizo {
     public static Collection<String> ingredientesUnicos(Collection<Feitizo> feitizos) {
         Set<String> ingredientesUnicos = new TreeSet<>();
         for (Feitizo feitizo : feitizos) {
-            for (String i  : feitizo.ingredientes) {
-                ingredientesUnicos.add(i);
-            }
+            ingredientesUnicos.addAll(feitizo.ingredientes);
         }
         return ingredientesUnicos;
+    }
+
+    public boolean addIngrediente(String ingrediente) {
+        return true;
+    }
+    public boolean removeIngrediente(String ingrediente) {
+        return true;
+    }
+    public boolean cambiarIngrediente(String ingredienteViejo, String ingredienteNuevo){
+        return true;
+    }
+
+    public static List<Feitizo> feitizosUsanIngrediente(String ingrediente) {
+        return null;
     }
 
     public static List<Feitizo> feitizosPosibles(Set<String> ingredientes) {
