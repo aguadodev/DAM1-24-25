@@ -1,9 +1,6 @@
 package ud6.festivalmeigas;
 
-import static org.junit.Assert.assertNull;
-
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
@@ -24,10 +21,21 @@ public class Feitizo {
         this.dificultade = dificultade;
     }
 
+    @Override
+    public String toString() {
+        return "Feitizo [nome=" + nome + "]";
+    }
+
     // Otros métodos
     public static void main(String[] args) {
         Feitizo[] feitizos = crearFeitizosExemplo();
         System.out.println(ingredientesUnicos(List.of(feitizos)));
+
+        String[] ingredientes = { "auga de río encantada", "pétalos de rosa silvestre", "fume de lareira",
+                "auga do mar", "salicornia", "berberechos místicos", "po de estrela fugaz", "cinza de bidueiro" };
+
+        System.out.println(feitizosPosibles(Set.of(ingredientes), List.of(crearFeitizosExemplo())));
+
     }
 
     public static Feitizo[] crearFeitizosExemplo() {
@@ -59,10 +67,12 @@ public class Feitizo {
     public boolean addIngrediente(String ingrediente) {
         return true;
     }
+
     public boolean removeIngrediente(String ingrediente) {
         return true;
     }
-    public boolean cambiarIngrediente(String ingredienteViejo, String ingredienteNuevo){
+
+    public boolean cambiarIngrediente(String ingredienteViejo, String ingredienteNuevo) {
         return true;
     }
 
@@ -70,8 +80,15 @@ public class Feitizo {
         return null;
     }
 
-    public static List<Feitizo> feitizosPosibles(Set<String> ingredientes) {
-        return null;
+    public static List<Feitizo> feitizosPosibles(Set<String> ingredientes, Collection<Feitizo> feitizos) {
+        List<Feitizo> feitizosPosibles = new ArrayList<>();
+
+        for (Feitizo feitizo : feitizos) {
+            if (ingredientes.containsAll(feitizo.ingredientes))
+                feitizosPosibles.add(feitizo);
+        }
+
+        return feitizosPosibles;
     }
 
     public static Map<String, Integer> ingredientesVecesUsados(Collection<Feitizo> feitizos) {
