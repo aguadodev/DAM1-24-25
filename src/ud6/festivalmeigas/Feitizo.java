@@ -1,10 +1,17 @@
 package ud6.festivalmeigas;
 
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class Feitizo {
+    // Atributos
 
+    // Constructores
+
+    // Otros métodos
 
 
     public static Feitizo[] crearFeitizosExemplo() {
@@ -25,4 +32,18 @@ public class Feitizo {
     return new Feitizo[]{f1, f2, f3, f4, f5, f6};
 }
 
+    public static Collection<String> ingredientesUnicos(Collection<Feitizo> feitizos) {
+        return null;
+    }
+
+    public static List<Feitizo> feitizosPosibles(Set<String> ingredientes) {
+        return null;
+    }
+
+    public static Map<String, Integer> ingredientesVecesUsados(Collection<Feitizo> feitizos){
+        return null;
+    }
+
+
+    
 }
