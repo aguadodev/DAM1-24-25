@@ -76,7 +76,7 @@ public class Feitizo {
         return true;
     }
 
-    public static List<Feitizo> feitizosUsanIngrediente(String ingrediente) {
+    public static List<Feitizo> feitizosUsanIngrediente(String ingrediente, Collection<Feitizo> feitizos) {
         return null;
     }
 
