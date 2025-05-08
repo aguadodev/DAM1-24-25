@@ -5,6 +5,7 @@ import javafx.stage.Stage;
 
 public class Ejemplo1 extends Application {
     static int contador = 0;
+
     public static void main(String[] args) throws Exception {
         System.out.println("Hello, JavaFX!");
         launch();

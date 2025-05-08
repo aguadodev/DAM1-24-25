@@ -1,5 +1,4 @@
 import javafx.application.Application;
-import javafx.event.EventType;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -7,7 +6,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class Ejemplo2 extends Application{
+public class Ejemplo2 extends Application {
     public static void main(String[] args) {
         launch(args);
     }
@@ -28,5 +27,5 @@ public class Ejemplo2 extends Application{
 
         primaryStage.show();
     }
-    
+
 }
