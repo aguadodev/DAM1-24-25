@@ -2,16 +2,16 @@
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class Ejemplo3 extends Application {
+public class Ejemplo extends Application {
     TextField txtNum1 = new TextField("Escribe un número...");
     TextField txtNum2 = new TextField("Otro número...");
+    DatePicker datePicker = new DatePicker();
     Button btnSumar = new Button("Sumar");
     Label lblResultado = new Label();
 
@@ -23,9 +23,10 @@ public class Ejemplo3 extends Application {
     public void start(Stage primaryStage) throws Exception {
         txtNum1.setOnKeyTyped(e -> sumar());
         txtNum2.setOnKeyTyped(e -> sumar());
-        txtNum2.addEventHandler(KeyEvent.KEY_TYPED, e -> sumar());
 
-        btnSumar.setOnAction(e -> sumar());
+        btnSumar.setOnAction(e -> {
+            datePicker.show();
+        });
 
         VBox vbox = new VBox(txtNum1, txtNum2, btnSumar, lblResultado);
 
