@@ -1,4 +1,4 @@
-package ud7.apuntesjavafx;
+package ud7.apuntesjavafx.login;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
