@@ -8,6 +8,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import ud7.ejemplousuarios.AppUsuario;
@@ -34,6 +35,9 @@ public class PerfilController implements Initializable {
 
     @FXML
     private Button btnAdmin;
+
+    @FXML
+    private DatePicker datePicker;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
