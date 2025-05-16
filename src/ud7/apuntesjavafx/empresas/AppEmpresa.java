@@ -81,7 +81,7 @@ public class AppEmpresa extends Application {
     }
 
     static public void guardarFicheroDat(String path) {
-        // Crear un fichero de texto para escritura
+        // Crear un fichero binario para escritura
         try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(path))) {
             out.writeObject(empresas);
         } catch (Exception e) {
@@ -91,9 +91,9 @@ public class AppEmpresa extends Application {
     }
 
     static public void cargarFicheroDat(String path) {
-        // Crear un fichero de texto para escritura
+        // Carga un fichero binario para lectura
         try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(path))) {
-            empresas = (List<Empresa>) in.readObject();
+            empresas = (ArrayList<Empresa>) in.readObject();
         } catch (Exception e) {
             // TODO: handle exception
             System.out.println("Error de E/S");
