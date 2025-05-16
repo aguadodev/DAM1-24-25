@@ -40,7 +40,7 @@
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-                  <MenuItem mnemonicParsing="false" onAction="#cargarFichero" text="Abrir..." />
+                  <MenuItem mnemonicParsing="false" onAction="#abrir" text="Abrir..." />
                   <MenuItem mnemonicParsing="false" onAction="#guardarFichero" text="Guardar" />
                   <MenuItem mnemonicParsing="false" onAction="#guardarComo" text="Guardar..." />
               <MenuItem mnemonicParsing="false" text="Close" />

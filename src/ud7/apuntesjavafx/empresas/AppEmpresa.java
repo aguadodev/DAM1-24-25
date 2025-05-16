@@ -16,7 +16,9 @@ import javafx.stage.Stage;
 public class AppEmpresa extends Application {
 
     static List<Empresa> empresas = new ArrayList<>();
-    static String path = "src/ud7/apuntesjavafx/empresas/";
+    static String rutaFicheroEmpresas = "src/ud7/apuntesjavafx/empresas/";
+    static String ficheroEmpresas = "src/ud7/apuntesjavafx/empresas/empresas.csv";
+    static Stage stagePrincipal;
 
     public static void main(String[] args) {
         empresas.add(new Empresa(1, "IES Chan do Monte", "http://ieschandomonte.edu.es/ies/"));
@@ -26,6 +28,7 @@ public class AppEmpresa extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        stagePrincipal = primaryStage;
         primaryStage.setTitle("Empresas");
         primaryStage.setResizable(false);
         Parent root = FXMLLoader.load(AppEmpresa.class.getResource("Empresa.fxml"));

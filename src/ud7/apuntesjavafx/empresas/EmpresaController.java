@@ -28,6 +28,9 @@ public class EmpresaController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        AppEmpresa.cargarFichero(AppEmpresa.ficheroEmpresas);
+        AppEmpresa.stagePrincipal.setTitle("Empresas - " + AppEmpresa.ficheroEmpresas);
+
         lstEmpresas.getItems().addAll(AppEmpresa.empresas);
 
         lstEmpresas.getSelectionModel().selectedItemProperty().addListener(
@@ -76,27 +79,53 @@ public class EmpresaController implements Initializable {
 
     @FXML
     void guardarFichero(ActionEvent event) {
-        AppEmpresa.guardarFichero(AppEmpresa.path + "empresas.csv");
+        AppEmpresa.guardarFichero(AppEmpresa.ficheroEmpresas);
     }
 
     @FXML
     void cargarFichero(ActionEvent event) {
-        AppEmpresa.cargarFichero(AppEmpresa.path + "empresas.csv");
+        AppEmpresa.cargarFichero(AppEmpresa.ficheroEmpresas);
         actualizarListView();
     }
 
     @FXML
     void guardarComo(ActionEvent event) {
         FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Open Resource File");
+        fileChooser.setTitle("Guardar como...");
+        fileChooser.setInitialDirectory(new File(AppEmpresa.rutaFicheroEmpresas));
         fileChooser.getExtensionFilters().addAll(
-                new ExtensionFilter("Text Files", "*.txt"),
-                new ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif"),
-                new ExtensionFilter("Audio Files", "*.wav", "*.mp3", "*.aac"),
-                new ExtensionFilter("All Files", "*.*"));
-        File selectedFile = fileChooser.showOpenDialog(null);
+                new ExtensionFilter("CSV Files", "*.csv"));
+        /*
+         * new ExtensionFilter("Text Files", "*.txt"),
+         * new ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif"),
+         * new ExtensionFilter("Audio Files", "*.wav", "*.mp3", "*.aac"),
+         * new ExtensionFilter("All Files", "*.*"));
+         */
+        File selectedFile = fileChooser.showSaveDialog(AppEmpresa.stagePrincipal);
+        if (selectedFile != null){}
+            AppEmpresa.guardarFichero(selectedFile.toString());
+    }
+
+    @FXML
+    void abrir(ActionEvent event) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Abrir...");
+        fileChooser.setInitialDirectory(new File(AppEmpresa.rutaFicheroEmpresas));
+        fileChooser.getExtensionFilters().addAll(
+                new ExtensionFilter("CSV Files", "*.csv"));
+        /*
+         * new ExtensionFilter("Text Files", "*.txt"),
+         * new ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif"),
+         * new ExtensionFilter("Audio Files", "*.wav", "*.mp3", "*.aac"),
+         * new ExtensionFilter("All Files", "*.*"));
+         */
+        File selectedFile = fileChooser.showOpenDialog(AppEmpresa.stagePrincipal);
         if (selectedFile != null) {
-            mainStage.display(selectedFile);
+            AppEmpresa.cargarFichero(selectedFile.toString());
+            actualizarListView();
+            AppEmpresa.stagePrincipal.setTitle("Empresas - " + selectedFile.toString());
+            AppEmpresa.rutaFicheroEmpresas = selectedFile.getParent();
+            AppEmpresa.ficheroEmpresas = selectedFile.getPath();
         }
     }
 
