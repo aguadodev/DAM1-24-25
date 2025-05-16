@@ -30,8 +30,8 @@
             <Button layoutX="37.0" layoutY="188.0" mnemonicParsing="false" onAction="#actualizar" text="Actualizar" />
             <Button layoutX="37.0" layoutY="216.0" mnemonicParsing="false" onAction="#borrar" text="Borrar" />
             <ListView fx:id="lstEmpresas" layoutX="275.0" layoutY="6.0" prefHeight="361.0" prefWidth="311.0" />
-            <Button layoutX="36.0" layoutY="308.0" mnemonicParsing="false" onAction="#guardarFichero" text="Guardar Fichero" />
-            <Button layoutX="147.0" layoutY="308.0" mnemonicParsing="false" onAction="#cargarFichero" text="Cargar Fichero" />
+            <Button layoutX="8.0" layoutY="308.0" mnemonicParsing="false" onAction="#guardarFichero" text="Guardar Fichero DAT" />
+            <Button layoutX="147.0" layoutY="308.0" mnemonicParsing="false" onAction="#cargarFichero" text="Cargar Fichero DAT" />
          </children>
       </AnchorPane>
    </center>

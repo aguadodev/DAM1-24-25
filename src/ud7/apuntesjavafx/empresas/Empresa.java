@@ -1,6 +1,8 @@
 package ud7.apuntesjavafx.empresas;
 
-public class Empresa {
+import java.io.Serializable;
+
+public class Empresa implements Serializable {
     private int id;
     private String nombre;
     private String web;

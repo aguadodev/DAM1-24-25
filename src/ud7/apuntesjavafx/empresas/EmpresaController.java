@@ -79,12 +79,12 @@ public class EmpresaController implements Initializable {
 
     @FXML
     void guardarFichero(ActionEvent event) {
-        AppEmpresa.guardarFichero(AppEmpresa.ficheroEmpresas);
+        AppEmpresa.guardarFicheroDat(AppEmpresa.rutaFicheroEmpresas + "empresa.dat");
     }
 
     @FXML
     void cargarFichero(ActionEvent event) {
-        AppEmpresa.cargarFichero(AppEmpresa.ficheroEmpresas);
+        AppEmpresa.cargarFicheroDat(AppEmpresa.rutaFicheroEmpresas + "empresa.dat");
         actualizarListView();
     }
 

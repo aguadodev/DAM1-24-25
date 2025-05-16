@@ -2,8 +2,12 @@ package ud7.apuntesjavafx.empresas;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -75,5 +79,26 @@ public class AppEmpresa extends Application {
             System.out.println("Error de E/S");
         }
     }
+
+    static public void guardarFicheroDat(String path) {
+        // Crear un fichero de texto para escritura
+        try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(path))) {
+            out.writeObject(empresas);
+        } catch (Exception e) {
+            // TODO: handle exception
+            System.out.println("Error de E/S");
+        }
+    }
+
+    static public void cargarFicheroDat(String path) {
+        // Crear un fichero de texto para escritura
+        try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(path))) {
+            empresas = (List<Empresa>) in.readObject();
+        } catch (Exception e) {
+            // TODO: handle exception
+            System.out.println("Error de E/S");
+        }
+    }
+
 
 }
