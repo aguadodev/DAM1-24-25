@@ -1,5 +1,6 @@
 package ud7.apuntesjavafx.empresas;
 
+import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -8,6 +9,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.stage.FileChooser;
+import javafx.stage.FileChooser.ExtensionFilter;
 
 public class EmpresaController implements Initializable {
 
@@ -44,10 +47,14 @@ public class EmpresaController implements Initializable {
             e.setNombre(txtNombre.getText());
             e.setWeb(txtWeb.getText());
 
-            // TODO Actualizar listview más quirúrgicamente
-            lstEmpresas.getItems().clear();
-            lstEmpresas.getItems().addAll(AppEmpresa.empresas);
+            actualizarListView();
         }
+    }
+
+    private void actualizarListView() {
+        // TODO Actualizar listview más quirúrgicamente
+        lstEmpresas.getItems().clear();
+        lstEmpresas.getItems().addAll(AppEmpresa.empresas);
     }
 
     @FXML
@@ -65,6 +72,32 @@ public class EmpresaController implements Initializable {
         int id = Integer.parseInt(txtId.getText());
         AppEmpresa.empresas.remove(new Empresa(id));
         lstEmpresas.getItems().remove(new Empresa(id));
+    }
+
+    @FXML
+    void guardarFichero(ActionEvent event) {
+        AppEmpresa.guardarFichero(AppEmpresa.path + "empresas.csv");
+    }
+
+    @FXML
+    void cargarFichero(ActionEvent event) {
+        AppEmpresa.cargarFichero(AppEmpresa.path + "empresas.csv");
+        actualizarListView();
+    }
+
+    @FXML
+    void guardarComo(ActionEvent event) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Open Resource File");
+        fileChooser.getExtensionFilters().addAll(
+                new ExtensionFilter("Text Files", "*.txt"),
+                new ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif"),
+                new ExtensionFilter("Audio Files", "*.wav", "*.mp3", "*.aac"),
+                new ExtensionFilter("All Files", "*.*"));
+        File selectedFile = fileChooser.showOpenDialog(null);
+        if (selectedFile != null) {
+            mainStage.display(selectedFile);
+        }
     }
 
 }
