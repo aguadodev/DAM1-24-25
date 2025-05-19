@@ -1,4 +1,4 @@
-package ud7.apuntesficherostexto.jaxb;
+package com.example;
 
 import java.io.File;
 import java.io.Serializable;
@@ -78,7 +78,7 @@ public class Socio implements Serializable {
     }
 
     public static void main(String[] args) {
-        final String PATH = "src/ud7/ficherostextoapuntes/jaxb/";
+        final String PATH = "";
         JAXBContext contexto;
         try {
             contexto = JAXBContext.newInstance(Socio.class);
