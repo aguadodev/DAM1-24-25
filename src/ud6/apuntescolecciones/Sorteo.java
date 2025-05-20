@@ -6,7 +6,6 @@ import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.TreeSet;
 
 import ud5.rol.Personaje;
 import ud5.rol.Personaje.Raza;

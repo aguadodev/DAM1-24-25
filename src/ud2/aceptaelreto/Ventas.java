@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Ventas {
     public static void main(String[] args) {
-        Scanner sc = new Scanner (System.in);
+        Scanner sc = new Scanner(System.in);
         sc.useLocale(Locale.US);
         double max = 0, min = 0, media = 0;
         int diaMax = 0, diaMin = 0;
@@ -32,20 +32,29 @@ public class Ventas {
             media += recaudacion;
         }
 
+        sc.close();
+        
         media /= 6;
 
         System.out.println(diaSemana(diaMax) + " " + diaSemana(diaMin) + " " + (recaudacion > media ? "SI" : "NO"));
-            }
-        
-        private static String diaSemana(int dia) {
-            return switch (dia) {
-                case 0: yield "MARTES";
-                case 1: yield "MIÉRCOLES";
-                case 2: yield "JUEVES";
-                case 3: yield "VIERNES";
-                case 4: yield "SÁBADO";
-                case 5: yield "DOMINGO"; 
-                default: yield "ERROR";               
-            };
-        }
+    }
+
+    private static String diaSemana(int dia) {
+        return switch (dia) {
+            case 0:
+                yield "MARTES";
+            case 1:
+                yield "MIÉRCOLES";
+            case 2:
+                yield "JUEVES";
+            case 3:
+                yield "VIERNES";
+            case 4:
+                yield "SÁBADO";
+            case 5:
+                yield "DOMINGO";
+            default:
+                yield "ERROR";
+        };
+    }
 }

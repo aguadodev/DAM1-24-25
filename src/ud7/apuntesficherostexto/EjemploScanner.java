@@ -19,6 +19,7 @@ public class EjemploScanner {
                 int num = sc.nextInt();
                 suma += num;
             }
+            sc.close();
             in.close();
 
             System.out.println("Suma = " + suma);

@@ -6,14 +6,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.TreeMap;
 
-public class Academico implements Comparable<Academico>{
+public class Academico implements Comparable<Academico> {
     String nombre;
     int anhoIngreso;
 
@@ -31,10 +29,6 @@ public class Academico implements Comparable<Academico>{
     public int compareTo(Academico o) {
         return nombre.compareTo(o.nombre);
     }
-    
-    
-
-
 
     public static void main(String[] args) {
         Map<Character, Academico> academia = new LinkedHashMap<>();
@@ -56,10 +50,9 @@ public class Academico implements Comparable<Academico>{
         System.out.println("==========================================\n");
         List<Academico> lista = new ArrayList<>(academia.values());
         Collections.sort(lista);
-        for (Academico a : lista){
+        for (Academico a : lista) {
             System.out.println(a);
         }
-
 
         // académicos: sin letra, por orden de nombre
         System.out.println("\nAcadémicos: sin letra, por orden de año de ingreso y por nombre");
@@ -74,10 +67,9 @@ public class Academico implements Comparable<Academico>{
             }
         });
 
-        for (Academico a : lista){
+        for (Academico a : lista) {
             System.out.println(a);
         }
-
 
         // académicos: sin letra, por orden de nombre
         System.out.println("\nAcadémicos: con letra, por orden de letra (clave), indicando nombre y fecha");

@@ -15,15 +15,20 @@ public class EjemploExcepcionesNoComprobadas {
             System.out.print("Elige una opción: ");
 
             int opcion = sc.nextInt();
+            sc.close();
             switch (opcion) {
                 case 1:
                     int a = 5 / 0; // División por cero
+                    System.out.println(a);
+                    break;
                 case 2:
                     int[] arr = new int[0];
                     arr[1] = 0; // Índice fuera del límite
+                    break;
                 case 3:
                     Integer i = null;
                     i.compareTo(5); // Acceso a un miembro de null
+                    break;
             }
         } catch (Exception e) {
             // Se puede capturar cada excepción con su propio bloque catch() o

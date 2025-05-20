@@ -49,16 +49,16 @@ public class AppInterfacesFuncionales {
         };
 
         String resultado1 = convertirAString.apply(5); // "5"
+        System.out.println(resultado1);
         String resultado2 = convertirAString.apply(10); // "10"
-
+        System.out.println(resultado2);
         // Ejemplo de Interfaz funcional Function implementada con una expresión lambda
         Function<Double, Double> cuadrado = x -> x * x;
         Double resultado3 = cuadrado.apply(5.0); // 25.0
-
+        System.out.println(resultado3);
         Function<Cliente, Integer> obtenerEdad = c -> c.getEdad();
 
         obtenerEdad.apply(new Cliente("1", "Pepe", "01/01/2008"));
-
 
         /*
          * Interfaz CONSUMER

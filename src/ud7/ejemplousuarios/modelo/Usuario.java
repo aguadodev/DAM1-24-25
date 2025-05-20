@@ -39,7 +39,7 @@ public class Usuario {
     private String webPersonal;
     private String redesSociales;
     private String preferencias;
-
+    
 
     // Constructores
     

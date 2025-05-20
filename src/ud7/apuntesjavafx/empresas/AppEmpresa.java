@@ -3,9 +3,11 @@ package ud7.apuntesjavafx.empresas;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
@@ -84,21 +86,28 @@ public class AppEmpresa extends Application {
         // Crear un fichero binario para escritura
         try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(path))) {
             out.writeObject(empresas);
-        } catch (Exception e) {
-            // TODO: handle exception
-            System.out.println("Error de E/S");
-        }
+    } catch (FileNotFoundException e) {
+        System.out.println("Error: Archivo no encontrado");
+    } catch (IOException e) {
+        System.out.println("Error de E/S al escribir en el archivo");
+    } catch (Exception e) {
+        System.out.println("Error desconocido al guardar el archivo");
+    }
     }
 
     static public void cargarFicheroDat(String path) {
         // Carga un fichero binario para lectura
         try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(path))) {
-            empresas = (ArrayList<Empresa>) in.readObject();
+            empresas = (List<Empresa>) in.readObject();
+        } catch (FileNotFoundException e) {
+            System.out.println("Error: Archivo no encontrado");
+        } catch (IOException e) {
+            System.out.println("Error de E/S al leer el archivo");
+        } catch (ClassNotFoundException e) {
+            System.out.println("Error: Clase no encontrada");
         } catch (Exception e) {
-            // TODO: handle exception
-            System.out.println("Error de E/S");
+            System.out.println("Error desconocido al cargar el archivo");
         }
     }
-
 
 }

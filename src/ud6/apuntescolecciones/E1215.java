@@ -5,7 +5,6 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
-import java.util.TreeMap;
 
 public class E1215 {
     private static Scanner sc = new Scanner(System.in);
@@ -13,8 +12,6 @@ public class E1215 {
     public static void main(String[] args) {
         int opcion;
         Map<Producto, Integer> stock = new HashMap<>();
-        Integer i;
-
 
         do {
             opcion = opcionMenu();
