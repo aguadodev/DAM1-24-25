@@ -102,8 +102,10 @@ public class EmpresaController implements Initializable {
          * new ExtensionFilter("All Files", "*.*"));
          */
         File selectedFile = fileChooser.showSaveDialog(AppEmpresa.stagePrincipal);
-        if (selectedFile != null){}
+        if (selectedFile != null){
             AppEmpresa.guardarFichero(selectedFile.toString());
+        }
+            
     }
 
     @FXML

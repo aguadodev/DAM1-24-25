@@ -7,7 +7,6 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.Scanner;
 
-import ud7.apuntesficherostexto.jaxb.Socio;
 
 public class SociosEjemplo {
     static final String PATH = "src/ud7/apuntesficherosbinarios/";

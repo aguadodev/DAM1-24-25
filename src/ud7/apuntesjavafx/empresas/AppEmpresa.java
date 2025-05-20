@@ -8,6 +8,7 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.NotSerializableException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
@@ -86,13 +87,15 @@ public class AppEmpresa extends Application {
         // Crear un fichero binario para escritura
         try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(path))) {
             out.writeObject(empresas);
-    } catch (FileNotFoundException e) {
-        System.out.println("Error: Archivo no encontrado");
-    } catch (IOException e) {
-        System.out.println("Error de E/S al escribir en el archivo");
-    } catch (Exception e) {
-        System.out.println("Error desconocido al guardar el archivo");
-    }
+        } catch (FileNotFoundException e) {
+            System.out.println("Error: Archivo no encontrado");
+        } catch (NotSerializableException e) {
+            System.out.println("Error: Objeto no serializable");            
+        } catch (IOException e) {
+            System.out.println("Error de E/S al escribir en el archivo");
+        } catch (Exception e) {
+            System.out.println("Error desconocido al guardar el archivo");
+        }
     }
 
     static public void cargarFicheroDat(String path) {
