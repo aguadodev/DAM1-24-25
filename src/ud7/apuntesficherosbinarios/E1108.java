@@ -6,7 +6,6 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.Arrays;
 
-import ud7.apuntesficherostexto.jaxb.Socio;
 
 public class E1108 {
     static final String PATH = "src/ud7/apuntesficherosbinarios/";
@@ -28,7 +27,7 @@ public class E1108 {
 
 
         // LEE EL FICHERO BINARIO E IMPRIME SUS DATOS
-        try (ObjectInputStream in = new ObjectInputStream(new FileInputStream("X:\\dam1\\Programación\\UD07\\socios.dat"))) {
+        try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(PATH + "socios.dat"))) {
             in.readByte();
             Socio[] sociosFichero = (Socio []) in.readObject();
 

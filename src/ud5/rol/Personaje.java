@@ -1,6 +1,8 @@
 package ud5.rol;
 
-public class Personaje {
+import java.io.Serializable;
+
+public class Personaje implements Serializable{
 
     final protected static byte PUNTOS_VIDA_BASE = 50; // 50 puntos de vida base
     final protected static int EXPERIENCIA_SUBIDA_NIVEL = 1000; // cada 1000 puntos de experiencia
