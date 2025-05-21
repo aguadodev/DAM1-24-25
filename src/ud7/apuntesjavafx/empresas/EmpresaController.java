@@ -2,6 +2,7 @@ package ud7.apuntesjavafx.empresas;
 
 import java.io.File;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
@@ -11,6 +12,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
+import ud5.clasesejercicios.E0710_trenes.App;
 
 public class EmpresaController implements Initializable {
 
@@ -102,8 +104,9 @@ public class EmpresaController implements Initializable {
          * new ExtensionFilter("All Files", "*.*"));
          */
         File selectedFile = fileChooser.showSaveDialog(AppEmpresa.stagePrincipal);
-        if (selectedFile != null){}
+        if (selectedFile != null){
             AppEmpresa.guardarFichero(selectedFile.toString());
+        }
     }
 
     @FXML
@@ -128,5 +131,37 @@ public class EmpresaController implements Initializable {
             AppEmpresa.ficheroEmpresas = selectedFile.getPath();
         }
     }
+
+    @FXML
+    void exportarJSON(ActionEvent event) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Exportar JSON...");
+        fileChooser.setInitialDirectory(new File(AppEmpresa.rutaFicheroEmpresas));
+        fileChooser.getExtensionFilters().addAll(
+                new ExtensionFilter("JSON Files", "*.json"));
+
+        File selectedFile = fileChooser.showSaveDialog(AppEmpresa.stagePrincipal);
+        if (selectedFile != null){
+            Empresa[] t = AppEmpresa.empresas.toArray(new Empresa[0]);
+            Util.exportararArrayJson(selectedFile.toString(), t); 
+        }
+    }
+
+    @FXML
+    void importarJSON(ActionEvent event) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Importar JSON...");
+        fileChooser.setInitialDirectory(new File(AppEmpresa.rutaFicheroEmpresas));
+        fileChooser.getExtensionFilters().addAll(
+                new ExtensionFilter("JSON Files", "*.json"));
+
+        File selectedFile = fileChooser.showOpenDialog(AppEmpresa.stagePrincipal);
+        if (selectedFile != null) {
+            Empresa[] t = Util.importarArrayJson(selectedFile.toString(), Empresa[].class); 
+            AppEmpresa.empresas.clear();
+            AppEmpresa.empresas.addAll(List.of(t));
+            actualizarListView();
+        }
+    }    
 
 }

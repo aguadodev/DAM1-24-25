@@ -42,7 +42,9 @@
             <items>
                   <MenuItem mnemonicParsing="false" onAction="#abrir" text="Abrir..." />
                   <MenuItem mnemonicParsing="false" onAction="#guardarFichero" text="Guardar" />
-                  <MenuItem mnemonicParsing="false" onAction="#guardarComo" text="Guardar..." />
+                  <MenuItem mnemonicParsing="false" onAction="#guardarComo" text="Guardar como..." />
+                  <MenuItem mnemonicParsing="false" onAction="#importarJSON" text="Importar JSON..." />
+                  <MenuItem mnemonicParsing="false" onAction="#exportarJSON" text="Exportar JSON..." />
               <MenuItem mnemonicParsing="false" text="Close" />
             </items>
           </Menu>

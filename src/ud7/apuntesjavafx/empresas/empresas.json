@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "nombre": "IES Chan do Monte",
+        "web": "http://ieschandomonte.edu.es/ies/"
+    },
+    {
+        "id": 2,
+        "nombre": "Google",
+        "web": "https://google.es"
+    },
+    {
+        "id": 3,
+        "nombre": "CloudFlare",
+        "web": "https://cloudflare.com"
+    },
+    {
+        "id": 4,
+        "nombre": "CDM",
+        "web": "http://cdm.es"
+    }
+]
