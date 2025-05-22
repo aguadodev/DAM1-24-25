@@ -71,11 +71,22 @@ public class Mapa extends Application {
                 // Mover personaje
                 gridPane.add(lbl, j, i);
             }
+
         }
 
         primaryStage.setTitle("Mapa");
         primaryStage.setResizable(false);
-        primaryStage.setScene(new Scene(gridPane));
+        Scene scene = new Scene(gridPane);
+        scene.setOnKeyTyped(e -> {
+            System.out.println(e.getCode().toString() + " - " + e.getCharacter());                
+            switch (e.getCharacter()) {
+                case "a": break;
+                case "w": break;
+                case "s": break;
+                case "d": break;
+            }
+        });
+        primaryStage.setScene(scene);
         primaryStage.show();
 
     }
