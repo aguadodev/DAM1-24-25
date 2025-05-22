@@ -2,21 +2,31 @@
     {
         "id": 1,
         "nombre": "IES Chan do Monte",
-        "web": "http://ieschandomonte.edu.es/ies/"
+        "web": "http://ieschandomonte.edu.es/ies/",
+        "direccion": "Chan do Monte s/n. Marín"
     },
     {
         "id": 2,
         "nombre": "Google",
-        "web": "https://google.es"
+        "web": "https://google.es",
+        "direccion": "Chan do Monte s/n. Marín"
     },
     {
         "id": 3,
         "nombre": "CloudFlare",
-        "web": "https://cloudflare.com"
+        "web": "https://cloudflare.com",
+        "direccion": "Chan do Monte s/n. Marín"
     },
     {
         "id": 4,
         "nombre": "CDM",
-        "web": "http://cdm.es"
+        "web": "http://cdm.es",
+        "direccion": "Chan do Monte s/n. Marín"
+    },
+    {
+        "id": 5,
+        "nombre": "PC-Box",
+        "web": "http://pcbox.es",
+        "direccion": "Chan do Monte s/n. Marín"
     }
 ]

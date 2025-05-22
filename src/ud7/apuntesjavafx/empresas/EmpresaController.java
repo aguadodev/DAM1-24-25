@@ -12,7 +12,6 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
-import ud5.clasesejercicios.E0710_trenes.App;
 
 public class EmpresaController implements Initializable {
 
