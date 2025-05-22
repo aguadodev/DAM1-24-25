@@ -27,6 +27,20 @@ public class SopaDeLetras extends Application {
                 Label lblLetra = new Label(String.valueOf(sopaLetras[i][j]));
                 lblLetra.setPrefSize(40, 40);
                 lblLetra.setAlignment(Pos.CENTER);
+                final int row = i;
+                final int col = j;
+                lblLetra.setOnMouseClicked(e -> {
+                    System.out.println(lblLetra.getText());
+                    lblLetra.setStyle("-fx-text-fill: #2196F3;");
+                    System.out.println("x: "+lblLetra.getLayoutX());
+                    System.out.println("y: "+lblLetra.getLayoutY());
+                    System.out.println("Has pulsado la letra " + sopaLetras[row][col]);
+                    System.out.println("Fila:" + row);
+                    System.out.println("Columna: " + col);       
+                    System.out.println("Fila: " + GridPane.getRowIndex(lblLetra));
+                    System.out.println("Columna: " + GridPane.getColumnIndex(lblLetra));
+                    
+                });
                 gridpane.add(lblLetra, j, i);
             }
         }
