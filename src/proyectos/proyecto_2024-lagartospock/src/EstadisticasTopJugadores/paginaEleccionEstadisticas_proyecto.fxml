@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EstadisticasTopJugadores.EstadisticasTopJugadores_controller">
+   <children>
+      <Label layoutX="454.0" layoutY="14.0" prefHeight="54.0" prefWidth="319.0" text="PPTLS">
+         <font>
+            <Font name="Impact" size="43.0" />
+         </font>
+      </Label>
+      <Button fx:id="botonTopPartidas" layoutX="35.0" layoutY="68.0" mnemonicParsing="false" onAction="#metodoEnsenharTopGanadas" prefHeight="50.0" prefWidth="248.0" text="Top de jugadores por partidas ganadas" />
+      <Button fx:id="botonTopRatio" layoutX="321.0" layoutY="68.0" mnemonicParsing="false" onAction="#metodoEnsenharTopRatio" prefHeight="50.0" prefWidth="248.0" text="Top de jugadores por ratio de victorias" />
+      <ListView fx:id="listaTopJugadores" layoutX="57.0" layoutY="152.0" prefHeight="200.0" prefWidth="487.0" />
+      <HBox layoutX="57.0" layoutY="118.0" prefHeight="34.0" prefWidth="487.0">
+         <children>
+            <Label fx:id="estadisticasTopJugadores" prefHeight="53.0" prefWidth="509.0" text="NO DEBERÍAS ESTAR LEYENDO ESTO" />
+         </children>
+      </HBox>
+      <Button fx:id="botonVueltaMenu" layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#metodoVolverMenu" text="Volver al menú" />
+   </children>
+</AnchorPane>

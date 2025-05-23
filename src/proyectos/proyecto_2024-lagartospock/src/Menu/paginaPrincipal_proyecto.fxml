@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Menu.MainPage_controller">
+   <children>
+      <Button fx:id="botonInfo" layoutX="484.0" layoutY="351.0" mnemonicParsing="false" onAction="#metodoEnsenharInfo" prefHeight="25.0" prefWidth="102.0" text="Información" />
+      <Label layoutX="249.0" layoutY="108.0" prefHeight="55.0" prefWidth="136.0" text="PPTLS">
+         <font>
+            <Font name="Impact" size="43.0" />
+         </font>
+      </Label>
+      <Button fx:id="botonCrearPartida" layoutX="116.0" layoutY="188.0" mnemonicParsing="false" onAction="#metodoCrearPartida" prefHeight="25.0" prefWidth="125.0" text="Crear partida" />
+      <Button fx:id="botonBuscarPartida" layoutX="377.0" layoutY="188.0" mnemonicParsing="false" onAction="#metodoBuscarPartida" prefHeight="25.0" prefWidth="125.0" text="Buscar partida" />
+      <Button fx:id="botonSalirJuego" layoutX="25.0" layoutY="351.0" mnemonicParsing="false" onAction="#metodoSalirJuego" prefHeight="25.0" prefWidth="79.0" text="Salir" />
+      <Button fx:id="botonEstadisticas" layoutX="246.0" layoutY="237.0" mnemonicParsing="false" onAction="#metodoMostrarEstadisticas" text="Mostrar estadísticas" />
+      <Label fx:id="labelUsuario" layoutX="24.0" layoutY="16.0" prefHeight="50.0" prefWidth="553.0" text="ZOMBIE" />
+   </children>
+</AnchorPane>
