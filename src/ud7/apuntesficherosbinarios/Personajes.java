@@ -12,7 +12,7 @@ import ud5.rol.Personaje;
 public class Personajes {
     public static void main(String[] args) {
         // Genera y escribe 10 Personajes de rol en un fichero binario
-        try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("personajeRol.dat"))) {
+        try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("datos/personajeRol.dat"))) {
 
             for (int i = 0; i < 10; i++) {
                 out.writeObject(new Personaje("Jugador" + i));
@@ -29,7 +29,7 @@ public class Personajes {
 
         Personaje[] tabla = new Personaje[10];
         // Lee 10 Personajes de rol de un fichero binario
-        try (ObjectInputStream in = new ObjectInputStream(new FileInputStream("personajeRol.dat"))) {
+        try (ObjectInputStream in = new ObjectInputStream(new FileInputStream("datos/personajeRol.dat"))) {
 
             for (int i = 0; i < 20; i++) {
                 tabla[i] = (Personaje) in.readObject();
