@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class AppClase {
     public static void main(String[] args) {
         // Carga las playas desde el fichero JSON en un array de Praias
-        Praia[] praias = Util.importarPraias("praias.json");
+        Praia[] praias = Util.importarPraias("datos/praias.json");
 
         // Ordenar por método natural (id)
         Arrays.sort(praias);
